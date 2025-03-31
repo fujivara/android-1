@@ -1,0 +1,32 @@
+<ion-app>
+  <div class="flex flex-col mt-auto mb-auto px-4 gap-4">
+    <ion-item *ngIf="submittedLanguageControl.valid">
+      {{ submittedLanguageControl.value }}
+    </ion-item>
+
+    <ion-accordion-group>
+      <ion-accordion>
+        <ion-item slot="header" color="light">
+          <ion-label>Programming Languages</ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content">
+          <ion-list>
+            <ion-item
+              *ngFor="let lang of programmingLanguages"
+              [class.selected]="selectedLanguageControl.value === lang"
+              [color]="selectedLanguageControl.value === lang ? 'dark' : 'light'"
+              (click)="onSelectLanguage(lang)"
+            >
+              <ion-label>{{ lang }}</ion-label>
+            </ion-item>
+          </ion-list>
+        </div>
+      </ion-accordion>
+    </ion-accordion-group>
+
+    <div class="flex flex-col gap-2">
+      <ion-button (click)="onSubmitLanguage()">Ok</ion-button>
+      <ion-button (click)="onCancel()">Cancel</ion-button>
+    </div>
+  </div>
+</ion-app>
