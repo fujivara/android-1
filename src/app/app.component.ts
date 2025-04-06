@@ -1,19 +1,15 @@
 import {Component, inject} from '@angular/core';
-import {CommonModule} from "@angular/common";
 import {FormBuilder, ReactiveFormsModule, Validators} from "@angular/forms";
-import {IonicModule} from "@ionic/angular";
 import {first, from} from "rxjs";
-import {AlertService} from "../../../lab2/src/app/shared/serices/alert.service";
+import {IonicModule} from "@ionic/angular";
+import {CommonModule} from "@angular/common";
+import {AlertService} from "./alert.service";
 
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
   styleUrl: 'app.component.css',
-  imports: [
-    CommonModule,
-    ReactiveFormsModule,
-    IonicModule,
-  ],
+  imports: [IonicModule, CommonModule, ReactiveFormsModule],
 })
 export class AppComponent {
   readonly programmingLanguages = ['Python', 'JS', 'Java', 'Go', 'Rust', 'Lisp'];

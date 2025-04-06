@@ -3,12 +3,10 @@ import { RouteReuseStrategy } from '@angular/router';
 import { IonicRouteStrategy, provideIonicAngular } from '@ionic/angular/standalone';
 
 import { AppComponent } from './app/app.component';
-import {provideAnimationsAsync} from "@angular/platform-browser/animations/async";
 
 bootstrapApplication(AppComponent, {
   providers: [
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    {provide: RouteReuseStrategy, useClass: IonicRouteStrategy},
     provideIonicAngular(),
-    provideAnimationsAsync(),
   ],
 });
